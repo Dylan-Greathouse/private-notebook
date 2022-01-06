@@ -17,12 +17,12 @@ export default function Auth({ isSigningUp = false }) {
 
       if(isSigningUp) {
         const user = await signUpUser(email,password);
-        setUser(user);
-        history.push('/confirm-email');
+        setUser(user)
+        history.push('/confirm-email')
       } else {
-        const userr = await signInUser(email, password);
-        setUser(user);
-        history.push('/notes');
+        const user = await signInUser(email, password)
+        setUser(user)
+        history.push('/notes')
       }
       // If signing in: set the user ({id, email}) and redirect to /notes
       // If signing up: redirect to /confirm-email
